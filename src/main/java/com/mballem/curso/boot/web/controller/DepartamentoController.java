@@ -67,7 +67,7 @@ public class DepartamentoController {
 	public String excluir(@PathVariable("id") Long id, ModelMap model) {
 		
 		if (service.departamentoTemCargos(id)) {
-			model.addAttribute("fail", "Departamento não removido. Possui cargo(s) vinculado(s).");
+			model.addAttribute("fail", "Este departamento não pode ser excluído, o mesmo possui cargos vinculados!");
 		} else {
 			service.excluir(id);
 			model.addAttribute("success", "Departamento excluído com sucesso.");
