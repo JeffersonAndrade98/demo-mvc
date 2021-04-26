@@ -15,12 +15,12 @@ public class MyErrorView implements ErrorViewResolver {
 	@Override
 	public ModelAndView resolveErrorView(HttpServletRequest request, HttpStatus status, Map<String, Object> map) {
 		
-		ModelAndView model = new ModelAndView("/error");
+		ModelAndView model = new ModelAndView("error");
 		model.addObject("status", status.value());
 		switch (status.value()) {
 		
 		case 400: 
-			model.addObject("error", "Erro inseperado");
+			model.addObject("error", "Erro inesperado");
 			model.addObject("message", "O parâmetro de solicitação necessário {tal} para o tipo de parâmetro do método {tal} está presente, mas foi convertido em nulo");
 			break;
 		

@@ -102,7 +102,7 @@ public class FuncionarioController {
 		return "funcionario/lista";
 	}		
 	
-    @GetMapping("/buscar/data")
+	@GetMapping("/buscar/data")
     public String getPorDatas(@RequestParam("entrada") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate entrada,
                               @RequestParam("saida") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate saida,
                               ModelMap model) {
