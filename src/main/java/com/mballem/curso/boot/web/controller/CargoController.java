@@ -19,6 +19,7 @@ import com.mballem.curso.boot.domain.Cargo;
 import com.mballem.curso.boot.domain.Departamento;
 import com.mballem.curso.boot.service.CargoService;
 import com.mballem.curso.boot.service.DepartamentoService;
+import com.mballem.curso.boot.service.FuncionarioService;
 
 @Controller
 @RequestMapping("/cargos")
@@ -84,5 +85,6 @@ public class CargoController {
 	@ModelAttribute("departamentos")
 	public List<Departamento> listaDeDepartamentos() {
 		return departamentoService.buscarTodos();
-	}	
+	}
+
 }
