@@ -1,5 +1,7 @@
 package com.mballem.curso.boot.web.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,13 +9,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.mballem.curso.boot.domain.Departamento;
+import com.mballem.curso.boot.domain.Funcionario;
 import com.mballem.curso.boot.service.DepartamentoService;
+import com.mballem.curso.boot.service.FuncionarioService;
 
 @Controller
 @RequestMapping("/departamentos")
@@ -21,6 +26,9 @@ public class DepartamentoController {
 	
 	@Autowired
 	private DepartamentoService service;
+	
+	@Autowired
+	private FuncionarioService funcionarioService;
 
 	@GetMapping("/cadastrar")
 	public String cadastrar(Departamento departamento) {
@@ -62,7 +70,7 @@ public class DepartamentoController {
 		attr.addFlashAttribute("success", "Departamento editado com sucesso.");
 		return "redirect:/departamentos/cadastrar";
 	}
-	
+		
 	@GetMapping("/excluir/{id}")
 	public String excluir(@PathVariable("id") Long id, ModelMap model) {
 		
@@ -76,5 +84,9 @@ public class DepartamentoController {
 		return listar(model);
 	}
 	
+	@ModelAttribute("carregar_funcionarios_na_tabela1")
+	public List<Funcionario>listaDeFuncionarios(){
+		return funcionarioService.buscarTodos();
+	}
 	
 }

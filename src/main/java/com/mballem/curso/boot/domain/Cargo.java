@@ -29,6 +29,7 @@ public class Cargo extends AbstractEntity<Long> {
 	
 	@OneToMany(mappedBy = "cargo")
 	private List<Funcionario> funcionarios;
+	
 
 	public String getNome() {
 		return nome;
@@ -52,5 +53,9 @@ public class Cargo extends AbstractEntity<Long> {
 
 	public void setFuncionarios(List<Funcionario> funcionarios) {
 		this.funcionarios = funcionarios;
-	} 	
+	}
+
+//	public Funcionario getFuncionario() {
+//		return funcionario;
+//	}
 }
