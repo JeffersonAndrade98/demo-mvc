@@ -3,8 +3,11 @@ package com.mballem.curso.boot.domain;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+import org.hibernate.envers.Audited;
+
 @SuppressWarnings("serial")
 @Entity
+@Audited
 @Table(name = "ENDERECOS")
 public class Endereco extends AbstractEntity<Long> {
 

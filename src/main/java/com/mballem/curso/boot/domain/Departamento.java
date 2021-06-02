@@ -6,8 +6,11 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+import org.hibernate.envers.Audited;
+
 @SuppressWarnings("serial")
 @Entity
+@Audited
 @Table(name = "DEPARTAMENTOS")
 public class Departamento extends AbstractEntity<Long> {
 

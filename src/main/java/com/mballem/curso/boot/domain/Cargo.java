@@ -12,8 +12,11 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.envers.Audited;
+
 @SuppressWarnings("serial")
 @Entity
+@Audited
 @Table(name = "CARGOS")
 public class Cargo extends AbstractEntity<Long> {
 

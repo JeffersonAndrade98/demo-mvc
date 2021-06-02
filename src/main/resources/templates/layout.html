@@ -3,7 +3,7 @@
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-	<title>Spring-Boot Básico</title>
+	<title>Projeto com Auditoria</title>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -84,6 +84,7 @@
 		
 		$(document).ready(function() {
     	$('#example').DataTable( {
+		"processing": true,
 		"language":{
 			"decimal":        "",
 		    "emptyTable":     "No data available in table",
@@ -108,7 +109,7 @@
 		        "sortDescending": ": activate to sort column descending"
 		    }
 		},
-        dom: 'Bfrtip',
+        dom: 'frtip',
         buttons: [
             		{ extend: 'excel', text: 'EXCEL' }, { extend: 'pdf', text: 'PDF' }, { extend: 'print', text: 'Imprimir' }
         		]

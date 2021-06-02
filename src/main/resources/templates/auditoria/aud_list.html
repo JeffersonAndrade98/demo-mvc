@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}">
+<head><meta charset="UTF-8"/></head>
+<body>
+	    <section class="layout-content" layout:fragment="corpo">
+	
+	        <nav class="navbar navbar-expand-md bg-light">
+	            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+	                <ul class="navbar-nav mr-auto">
+	                    <li class="nav-item active">
+	                        <i class="oi oi-caret-right"></i>
+	                        <span>Auditoria</span>
+	                    </li>
+	                </ul>
+	            </div>
+	        </nav>
+	
+	        <div class="container" id="listagem">
+	        
+	            <div class="table-responsive">
+	                <table id="example" class="table table-striped table-hover table-sm">
+	                    <thead>
+	                    <tr>
+	                        <th>SQ.</th>
+	                        <th>ID</th>
+	                        <th>NOME</th>
+	                        <th>STATUS</th>
+	                        <th>TIMESTAMP</th>
+	                    </tr>
+	                    </thead>
+	                    <tbody>
+		                   		<tr th:each="af : ${listarauditoria}">
+		                        <td th:text="${af.sequencia}">1</td>
+		                        <td th:text="${af.id}">1</td>
+		                        <td th:text="${af.nome}">1</td>
+		                        <td th:text="${af.status}">1</td>
+		                        <td th:text="${af.tempo}">1</td>
+		                    </tr>	
+	                    </tbody>
+	                </table>
+	            </div>
+	        </div>
+	    </section>
+</body>
+</html>		

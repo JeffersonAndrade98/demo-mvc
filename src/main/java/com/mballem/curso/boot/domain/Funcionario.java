@@ -7,6 +7,8 @@ import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.*;
 
+import org.hibernate.envers.Audited;
+import org.hibernate.envers.NotAudited;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 import org.springframework.format.annotation.NumberFormat;
@@ -14,6 +16,7 @@ import org.springframework.format.annotation.NumberFormat.Style;
 
 @SuppressWarnings("serial")
 @Entity
+@Audited
 @Table(name = "FUNCIONARIOS")
 public class Funcionario extends AbstractEntity<Long> {
 
